@@ -3,17 +3,20 @@ package main
 import "fmt"
 
 func main() {
+	// Map declaration
+	studentScores := map[string]int{
+		"John":  95,
+		"Alice": 89,
+		"Bob":   78,
+	}
 
-	// Slice declaration
-	numbers := []int{1, 2, 3, 4, 5}
+	// Create map using make
+	ages := make(map[string]int)
 
-	// Create slice using make
-	scores := make([]int, 5, 10) // length 5, capacity 10
+	// Add key-value pairs
+	ages["Tom"] = 25
+	ages["Jane"] = 28
 
-	// Append to slice
-	numbers = append(numbers, 6, 7, 8, 9, 10, 11)
-
-	fmt.Printf("Numbers: %v\n", numbers)
-	fmt.Printf("Scores: %v\n", scores)
-
+	fmt.Printf("Student Scores: %v\n", studentScores)
+	fmt.Printf("Ages: %v\n", ages)
 }
