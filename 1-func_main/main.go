@@ -4,11 +4,10 @@ import "fmt"
 
 func main() {
 
-	// Unsigned Integer Types
-	var uintNum uint = 42 // Platform dependent
-	//   var uint8Num uint8 = 255       // 0 to 255
-	//   var uint16Num uint16 = 65535   // 0 to 65535
-	//   var uint32Num uint32 = 4294967295
+	// Float Types
+	var float32Num float32 = 3.14
+	var float64Num float64 = 3.141592653589793
 
-	fmt.Printf("Unsigned Integer: %v\n", uintNum)
+	fmt.Printf("Float: %f\n", float32Num)
+	fmt.Printf("Float: %v\n", float64Num)
 }
