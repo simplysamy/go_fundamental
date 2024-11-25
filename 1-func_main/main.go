@@ -3,8 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	// Fixed-size array
-	var numbers [5]int = [5]int{1, 2, 3, 4, 5}
 
-	fmt.Printf("Numbers: %v\n", numbers)
+	// Short declaration
+	fruits := [3]string{"apple", "banana", "orange"}
+
+	fmt.Printf("Fruits: %v\n", fruits)
+	fmt.Printf("First Fruit is: %v\n", fruits[0])
 }
