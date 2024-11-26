@@ -1,29 +1,53 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
+import "fmt"
 
-// Struct can be compared as class concept in OOPS
+// Define an interface
+type Shape interface {
+	Area() float64
+	Perimeter() float64
+}
 
-// Define a struct
-type Person struct {
-	Name    string
-	Age     int
-	Address string
+// Define a struct that satisfies the interface
+type Rectangle struct {
+	Width, Height float64
+}
+
+// Implement the methods for Rectangle
+func (r Rectangle) Area() float64 {
+	return r.Width * r.Height
+}
+
+func (r Rectangle) Perimeter() float64 {
+	return 2 * (r.Width + r.Height)
+}
+
+// Another struct satisfying the interface
+type Circle struct {
+	Radius float64
+}
+
+func (c Circle) Area() float64 {
+	return 3.14 * c.Radius * c.Radius
+}
+
+func (c Circle) Perimeter() float64 {
+	return 2 * 3.14 * c.Radius
+}
+
+// Function using the Shape interface
+func PrintShapeDetails(s Shape) {
+	fmt.Println("Area:", s.Area())
+	fmt.Println("Perimeter:", s.Perimeter())
 }
 
 func main() {
-	// Create struct instance
-	person := Person{
-		Name:    "John Doe",
-		Age:     30,
-		Address: "123 Main St",
-	}
+	r := Rectangle{Width: 4, Height: 5}
+	c := Circle{Radius: 3}
 
-	fmt.Printf("Person: %+v\n", person)
+	fmt.Println("Rectangle:")
+	PrintShapeDetails(r)
 
-	t := reflect.TypeOf(person)
-	fmt.Println(t) // Output
+	fmt.Println("\nCircle:")
+	PrintShapeDetails(c)
 }
