@@ -5,5 +5,8 @@ func main() {
 	var expectedReturnRate = 5.5
 	var years = 10
 
-	var futureValue = investmentAmount * (1 + expectedReturnRate/100) * *years
+	//change investmentAmount to float64
+	//expectedReturnRate is in float64
+
+	var futureValue = float64(investmentAmount) * (1 + expectedReturnRate/100) * *float64(years)
 }
