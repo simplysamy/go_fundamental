@@ -13,5 +13,10 @@ func main() {
 	years := 10.0
 
 	futureValue := (investmentAmount) * math.Pow(1+expectedReturnRate/100, (years))
+
+	// Adjust inflation rate in the future value
+	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
+
 	fmt.Println(futureValue)
+	fmt.Println(futureRealValue)
 }
