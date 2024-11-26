@@ -1,22 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
+
+// Struct can be compared as class concept in OOPS
+
+// Define a struct
+type Person struct {
+	Name    string
+	Age     int
+	Address string
+}
 
 func main() {
-	// Map declaration
-	studentScores := map[string]int{
-		"John":  95,
-		"Alice": 89,
-		"Bob":   78,
+	// Create struct instance
+	person := Person{
+		Name:    "John Doe",
+		Age:     30,
+		Address: "123 Main St",
 	}
 
-	// Create map using make
-	ages := make(map[string]int)
+	fmt.Printf("Person: %+v\n", person)
 
-	// Add key-value pairs
-	ages["Tom"] = 25
-	ages["Jane"] = 28
-
-	fmt.Printf("Student Scores: %v\n", studentScores)
-	fmt.Printf("Ages: %v\n", ages)
+	t := reflect.TypeOf(person)
+	fmt.Println(t) // Output
 }
